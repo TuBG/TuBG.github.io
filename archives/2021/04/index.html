@@ -356,6 +356,71 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/10/icoding%20problem/" >
+            
+                <span>TuBG&#39;s icoding</span>
+        </a>
+        <div class="abstract-content">
+            分享一波今日icoding的解题思路
+
+
+先来看一波题目
+
+
+
+
+分析思路
+
+
+由于函数的参数是字符串，输入的类型就是字符型。也就是我们需要对字符进行分类判断。
+
+识别到空格
+
+
+空格符号ascii码值为32
+
+
+
+
+
+
+
+
+由于存贮数字的停止循环条件是判断到空格，所以写if的时候我们可以将判断到空格的情况化到其他两种情况中去。
+
+
+
+
+识别的字符为数字(需要考虑到多位数数字的入栈方式)
+
+
+0到9对应ascii码值为48~57，所以askii码值-48就是数字大小。
+
+
+
+
+
+
+
+
+入栈方式：我们可以定义一个整型变量num来存储多位数，然后用一个循环不断识别字符，每次令num=num*...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/07/first%20blog/" >
             
                 <span>TuBG&#39;s first blog</span>
@@ -518,9 +583,16 @@ More...
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 3
         </div>
         <!-- search  -->
         
@@ -547,6 +619,11 @@ More...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/10</span><a class="archive-post-title" href= "/2021/04/10/icoding%20problem/" >TuBG's icoding</a>
+        </li>
     
     
         <li class="archive-post-item">
