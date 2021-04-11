@@ -6,10 +6,32 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-10T13:12:19.623Z</updated>
+  <updated>2021-04-11T12:20:00.017Z</updated>
   <id>http://example.com/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习 KMP算法</title>
+    <link href="http://example.com/2021/04/11/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://example.com/2021/04/11/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</id>
+    <published>2021-04-11T12:16:14.947Z</published>
+    <updated>2021-04-11T12:20:00.017Z</updated>
+    
+    <content type="html"><![CDATA[<h1>有一些地方还没理解明天再补充，我参考的是csdn的一个博主的文章，先放个链接</h1><p><a href="https://blog.csdn.net/weixin_46007276/article/details/104372119?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161813579516780262584944%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=161813579516780262584944&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-104372119.pc_search_result_before_js&amp;utm_term=kmp%E7%AE%97%E6%B3%95">csdn文章</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;有一些地方还没理解明天再补充，我参考的是csdn的一个博主的文章，先放个链接&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_46007276/article/details/104372119?ops_request_mis</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>TuBG&#39;s icoding</title>
