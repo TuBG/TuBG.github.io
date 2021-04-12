@@ -374,10 +374,26 @@ height:50vh;
                 <span>学习 KMP算法</span>
         </a>
         <div class="abstract-content">
-            有一些地方还没理解明天再补充，我参考的是csdn的一个博主的文章，先放个链接
+            KMP算法是模式串匹配一种提高效率的算法
 
-csdn文章
 
+为什么这么说呢？
+
+
+相比于暴力算法（一个一个对比，不匹配子串回归第一个字符，主串回归原本字符的下一个），暴力算法的时间复杂度是O(m*n),空间复杂度是O(1), m和n分别是子串长度和主串长度。而KMP算法的KMP算法的总时间复杂度为O(m+n)，空间复杂度记为O(m)。空间多用了一点，但效率却大大提升，明显是非常有用的。
+
+至于为啥时间复杂度和空间复杂度是这样，详见下面解析。
+
+
+
+了解KMP算法之前，我们先来一些知识点铺垫
+
+
+前缀，后缀分别是什么?
+
+一串子串的前缀就是包括这个子串第一个字符不包括最后一个字串且连续的一段子串。
+
+同...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -729,7 +745,7 @@ More...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/07/first%20blog/" >TuBG's first blog</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/11/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" >学习 KMP算法</a>
         </li>
     
     
@@ -743,7 +759,7 @@ More...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/11/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" >学习 KMP算法</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/07/first%20blog/" >TuBG's first blog</a>
         </li>
     
     
