@@ -369,6 +369,44 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/12/%E6%B1%82next%E6%95%B0%E7%BB%84%E7%AE%97%E6%B3%95/" >
+            
+                <span>求next数组的算法</span>
+        </a>
+        <div class="abstract-content">
+            这篇学求next数组算法
+
+
+话不多说，直接上代码
+
+void GetNext(SString t,int next[]) {  
+    int j, k;
+    j=0;     
+    k=-1;    
+    next[0]=-1;
+    while (j&lt;t.length-1) 
+    //因为next数组的赋值都是在j++之后，所以判断条件是j&lt;t.length-1 
+    {
+        if (k==-1 || t.data[j]==t.data[k]) {
+            j++; //推进到下一位
+            k++;/...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/11/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" >
             
                 <span>学习 KMP算法</span>
@@ -721,9 +759,22 @@ More...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 4
+        Total : 5
         </div>
         <!-- search  -->
         
@@ -764,6 +815,11 @@ More...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2021/04/12/%E6%B1%82next%E6%95%B0%E7%BB%84%E7%AE%97%E6%B3%95/" >求next数组的算法</a>
+        </li>
     
     
         <li class="archive-post-item">

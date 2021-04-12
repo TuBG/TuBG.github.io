@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>求next数组的算法</title>
+      <link href="2021/04/12/%E6%B1%82next%E6%95%B0%E7%BB%84%E7%AE%97%E6%B3%95/"/>
+      <url>2021/04/12/%E6%B1%82next%E6%95%B0%E7%BB%84%E7%AE%97%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<center><h2>这篇学求next数组算法</h2></center><blockquote><p>话不多说，直接上代码</p></blockquote><pre class="line-numbers language-C" data-language="C"><code class="language-C">void GetNext(SString t,int next[]) {      int j, k;    j=0;         k=-1;        next[0]=-1;    while (j&lt;t.length-1)     //因为next数组的赋值都是在j++之后，所以判断条件是j&lt;t.length-1     {        if (k==-1 || t.data[j]==t.data[k]) {            j++; //推进到下一位            k++;//推进到下一位            next[j]=k;    /*更新next数组*/        }        else            k=next[k];               //next[k]代表的是下标k之前的字符的前缀后缀相同最大值             //所以next[k]也同时代表了字符不匹配时k回溯的位置（有点难理解，可以参考KMP算法的图解，差不多的原理）             //回溯到最长相同前缀的后一位（下面会讲为什么）                             }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>虽然代码很短，但是理解起来十分费劲，不得不佩服前人的智慧，tql。</p></blockquote><blockquote><p>让我们来说说为什么k=next[k]之后k的位置是最长相同前缀的后一位</p></blockquote><ul><li>next[k]代表的是最长相同前缀的长度,所以最长相同前缀最后一个字符的下标对应就是next[k]-1，因此next[k]就是下一位。</li><li>光这么说，还是很难理解，我们上一个例子。</li></ul><blockquote><p>例子</p></blockquote><p><img src="/image/7.png" alt="例子"></p><ul><li><p>演算过程:</p></li><li><p>初始:j=0; k=-1; next[0]=-1;</p></li><li><p>1）j=1; k=0; next[1]=0;</p></li><li><p>2）t.data[1]  t.data[0]  不等   k=next[0]=-1;</p></li><li><p>3）j=2; k=0; next[2]=0;</p></li><li><p>4）t.data[2]  t.data[0]  不等   k=next[0]=-1;</p></li><li><p>5）j=3; k=0; next[3]=0;</p></li><li><p>6）t.data[3] = =t.data[0]  等 </p><pre><code>j=4; k=1; next[4]=1;</code></pre></li><li><p>7）t.data[4] = =t.data[1]  等 </p><pre><code>j=5; k=2; next[5]=2;</code></pre><blockquote><p>这算法确实难理解,再次感叹先人智慧.     </p></blockquote></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>学习 KMP算法</title>
       <link href="2021/04/11/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
       <url>2021/04/11/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
