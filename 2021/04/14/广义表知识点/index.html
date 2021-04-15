@@ -28,7 +28,7 @@
 <meta property="og:description" content="广义表是 n 个数据元素（d1，d2，d3，…，dn）的有限序列，广义表中的 di 既可以是单个元素，也可以是一个广义表。   通常记为 L &#x3D; （d1，d2，d3，…，dn），L 是广义表的名称，通常广义表的名称用大写字母表示。n 是广义表的长度。  若其中的 di 是一个广义表，则称 di 是广义表 L 的子表。  在广义表 L 中，d1 是广义表 L 的表头，而广义表 L 其余部分组">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-14T15:15:21.243Z">
-<meta property="article:modified_time" content="2021-04-14T15:32:57.382Z">
+<meta property="article:modified_time" content="2021-04-15T11:59:07.652Z">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -280,7 +280,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">679</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">681</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -473,17 +473,26 @@ height:50vh;
 <p>广义表的深度：</p>
 </blockquote>
 <ol>
-<li><p>广义表的深度，可以通过观察该表中所包含括号的层数间接得到。这里需要注意，数左括号（或右括号）时同一层次的多个括号只计算一次。</p>
+<li>广义表的深度，可以通过观察该表中所包含括号的层数间接得到。这里需要注意，数左括号（或右括号）时同一层次的多个括号只计算一次。</li>
+</ol>
+<ul>
+<li><blockquote>
+<p>深度的求法为上面每个元素的括号匹配数加1的最大值</p>
+</blockquote>
 </li>
+</ul>
+<ol start="2">
 <li><p>题目：广义表（（a，b），（c，（d，e））） 中，子表（a，b） 和 （c，（d，e）） 位于同层，（a，b）只有 1 层括号，而（c，（d，e））有 2 层括号，加上最外层的 1 层括号，所以此广义表中包含 3 层括号，因此深度为 3</p>
 </li>
-<li><p>题目：广义表 （a，（a，b），d，e，（（i，j），k））的深度是 3<br>深度的求法为上面每个元素的括号匹配数加1的最大值<br>a 的括号匹配数为 0，加上1后为1;<br>（a，b）的括号匹配数为 1，加上1后为2;<br>d 的括号匹配数为 0，加上1后为1;<br>e 的括号匹配数为 0，加上1后为1;<br>（（i，j），k）的括号匹配数为 2，加上1后为3<br>找最大值，故该广义表的深度为3.</p>
-</li>
-<li><p>待补充</p>
+<li><p>题目：广义表 （a，（a，b），d，e，（（i，j），k））的深度是 3</p>
 </li>
 </ol>
 </li>
 </ul>
+<p> a 的括号匹配数为 0，加上1后为1;<br>（a，b）的括号匹配数为 1，加上1后为2;<br>d 的括号匹配数为 0，加上1后为1;<br>e 的括号匹配数为 0，加上1后为1;<br>（（i，j），k）的括号匹配数为 2，加上1后为3<br>找最大值，故该广义表的深度为3.</p>
+<ol start="4">
+<li>待补充</li>
+</ol>
 
     </article>
     <!-- license  -->
@@ -491,6 +500,11 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2021/04/15/%E5%B9%BF%E4%B9%89%E8%A1%A8%E8%A1%A5%E5%85%85/" title= "广义表补充">
+                    <div class="nextTitle">广义表补充</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -689,9 +703,20 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 7
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -732,6 +757,11 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href= "/2021/04/15/%E5%B9%BF%E4%B9%89%E8%A1%A8%E8%A1%A5%E5%85%85/" >广义表补充</a>
+        </li>
     
     
         <li class="archive-post-item">

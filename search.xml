@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>广义表补充</title>
+      <link href="2021/04/15/%E5%B9%BF%E4%B9%89%E8%A1%A8%E8%A1%A5%E5%85%85/"/>
+      <url>2021/04/15/%E5%B9%BF%E4%B9%89%E8%A1%A8%E8%A1%A5%E5%85%85/</url>
+      
+        <content type="html"><![CDATA[<p>广义表最基本的操作：取表头head(LS)与取表尾tail(LS)</p><blockquote><ul><li>head()是取表头元素，即表中第一个元素（可以是表）</li></ul></blockquote><blockquote><ul><li>tail()是取表尾，即原表去掉第一个元素后剩下形成的表。注意：如果LS=(a,b),则tail(LS)=(b),而不是b；tail返回的一定是个表。</li></ul></blockquote><p>例：LS=(a,(b,c,d))</p><p>head(LS)=a</p><p>tail(LS)=((b,c,d))</p><p>head(tail(LS))=(b,c,d)</p><p>tail(tail(LS))=()</p><p>head(head(tail(LS)))=b</p><p>tail(head(tail(LS)))=(c,d)</p><p>head(tail(head(tail(LS))))=c</p><p>tail(tail(head(tail(LS))))=(d)</p><p>head(tail(tail(head(tail(LS)))))=d</p><p>tail(tail(tail(head(tail(LS)))))=()</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>广义表知识点</title>
       <link href="2021/04/14/%E5%B9%BF%E4%B9%89%E8%A1%A8%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
       <url>2021/04/14/%E5%B9%BF%E4%B9%89%E8%A1%A8%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
       
-        <content type="html"><![CDATA[<ol><li><h1></h1></li></ol><ul><li><p>广义表是 n 个数据元素（d1，d2，d3，…，dn）的有限序列，广义表中的 di 既可以是单个元素，也可以是一个广义表。</p></li><li><p> 通常记为 L = （d1，d2，d3，…，dn），L 是广义表的名称，通常广义表的名称用大写字母表示。n 是广义表的长度。</p></li><li><p>若其中的 di 是一个广义表，则称 di 是广义表 L 的子表。</p></li><li><p>在广义表 L 中，d1 是广义表 L 的表头，而广义表 L 其余部分组成的表（d2，d3，…，dn）称为广义表表尾。</p><blockquote><ol><li>这一点与下面的常用函数有关，先来几个例题。</li></ol></blockquote><blockquote><ol start="2"><li>题目：广义表 L =（a，（b，c））的表头是单个元素 a，表尾是广义表（（b，c）），即head（L）= a ， tail（L）= （（b，c））</li></ol></blockquote><ul><li>注：求表尾的时候原广义表的最外面这层小括号不能漏，即 tail（L）的结果不是（b，c），而是（（b，c））</li></ul><blockquote><ol start="3"><li>题目：广义表 L =（（a，b），c）的表头不是 a，而是子表（a，b），表尾是广义表（c）</li></ol></blockquote><blockquote><ol start="4"><li>题目：广义表 L =（a，b，c）的表头是单个元素 a，表尾是（b，c）</li></ol></blockquote><blockquote><ol start="5"><li>题目：广义表 L =（a）的表头是单个元素 a，表尾是广义表（），表尾一定是个广义表，表尾为空时则用（）表示</li></ol></blockquote></li></ul><ol start="2"><li><h1></h1></li></ol><ul><li><blockquote><p>广义表的长度：</p></blockquote><ol><li><p>广义表的长度指：广义表中所包含的数据元素的个数。<br>题目：在广义表 （a，（b，c，d））中，它包含单个元素 a 和一个子表（b，c，d），因此该广义表的长度为 2</p></li><li><p>题目：广义表（（a，b，c）） 中只有一个子表（a，b，c），因此该广义表的长度为 1</p></li></ol></li></ul><ol start="3"><li><h1></h1></li></ol><ul><li><blockquote><p>广义表的深度：</p></blockquote><ol><li><p>广义表的深度，可以通过观察该表中所包含括号的层数间接得到。这里需要注意，数左括号（或右括号）时同一层次的多个括号只计算一次。</p></li><li><p>题目：广义表（（a，b），（c，（d，e））） 中，子表（a，b） 和 （c，（d，e）） 位于同层，（a，b）只有 1 层括号，而（c，（d，e））有 2 层括号，加上最外层的 1 层括号，所以此广义表中包含 3 层括号，因此深度为 3</p></li><li><p>题目：广义表 （a，（a，b），d，e，（（i，j），k））的深度是 3<br>深度的求法为上面每个元素的括号匹配数加1的最大值<br>a 的括号匹配数为 0，加上1后为1;<br>（a，b）的括号匹配数为 1，加上1后为2;<br>d 的括号匹配数为 0，加上1后为1;<br>e 的括号匹配数为 0，加上1后为1;<br>（（i，j），k）的括号匹配数为 2，加上1后为3<br>找最大值，故该广义表的深度为3.</p></li><li><p>待补充</p></li></ol></li></ul>]]></content>
+        <content type="html"><![CDATA[<ol><li><h1></h1></li></ol><ul><li><p>广义表是 n 个数据元素（d1，d2，d3，…，dn）的有限序列，广义表中的 di 既可以是单个元素，也可以是一个广义表。</p></li><li><p> 通常记为 L = （d1，d2，d3，…，dn），L 是广义表的名称，通常广义表的名称用大写字母表示。n 是广义表的长度。</p></li><li><p>若其中的 di 是一个广义表，则称 di 是广义表 L 的子表。</p></li><li><p>在广义表 L 中，d1 是广义表 L 的表头，而广义表 L 其余部分组成的表（d2，d3，…，dn）称为广义表表尾。</p><blockquote><ol><li>这一点与下面的常用函数有关，先来几个例题。</li></ol></blockquote><blockquote><ol start="2"><li>题目：广义表 L =（a，（b，c））的表头是单个元素 a，表尾是广义表（（b，c）），即head（L）= a ， tail（L）= （（b，c））</li></ol></blockquote><ul><li>注：求表尾的时候原广义表的最外面这层小括号不能漏，即 tail（L）的结果不是（b，c），而是（（b，c））</li></ul><blockquote><ol start="3"><li>题目：广义表 L =（（a，b），c）的表头不是 a，而是子表（a，b），表尾是广义表（c）</li></ol></blockquote><blockquote><ol start="4"><li>题目：广义表 L =（a，b，c）的表头是单个元素 a，表尾是（b，c）</li></ol></blockquote><blockquote><ol start="5"><li>题目：广义表 L =（a）的表头是单个元素 a，表尾是广义表（），表尾一定是个广义表，表尾为空时则用（）表示</li></ol></blockquote></li></ul><ol start="2"><li><h1></h1></li></ol><ul><li><blockquote><p>广义表的长度：</p></blockquote><ol><li><p>广义表的长度指：广义表中所包含的数据元素的个数。<br>题目：在广义表 （a，（b，c，d））中，它包含单个元素 a 和一个子表（b，c，d），因此该广义表的长度为 2</p></li><li><p>题目：广义表（（a，b，c）） 中只有一个子表（a，b，c），因此该广义表的长度为 1</p></li></ol></li></ul><ol start="3"><li><h1></h1></li></ol><ul><li><blockquote><p>广义表的深度：</p></blockquote><ol><li>广义表的深度，可以通过观察该表中所包含括号的层数间接得到。这里需要注意，数左括号（或右括号）时同一层次的多个括号只计算一次。</li></ol><ul><li><blockquote><p>深度的求法为上面每个元素的括号匹配数加1的最大值</p></blockquote></li></ul><ol start="2"><li><p>题目：广义表（（a，b），（c，（d，e））） 中，子表（a，b） 和 （c，（d，e）） 位于同层，（a，b）只有 1 层括号，而（c，（d，e））有 2 层括号，加上最外层的 1 层括号，所以此广义表中包含 3 层括号，因此深度为 3</p></li><li><p>题目：广义表 （a，（a，b），d，e，（（i，j），k））的深度是 3</p></li></ol></li></ul><p> a 的括号匹配数为 0，加上1后为1;<br>（a，b）的括号匹配数为 1，加上1后为2;<br>d 的括号匹配数为 0，加上1后为1;<br>e 的括号匹配数为 0，加上1后为1;<br>（（i，j），k）的括号匹配数为 2，加上1后为3<br>找最大值，故该广义表的深度为3.</p><ol start="4"><li>待补充</li></ol>]]></content>
       
       
       
