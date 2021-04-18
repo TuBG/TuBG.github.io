@@ -6,10 +6,36 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-15T12:22:44.957Z</updated>
+  <updated>2021-04-18T12:58:49.583Z</updated>
   <id>http://example.com/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>串替换答案</title>
+    <link href="http://example.com/2021/04/18/%E4%B8%B2%E6%9B%BF%E6%8D%A2/"/>
+    <id>http://example.com/2021/04/18/%E4%B8%B2%E6%9B%BF%E6%8D%A2/</id>
+    <published>2021-04-18T12:46:24.901Z</published>
+    <updated>2021-04-18T12:58:49.583Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><h2>由于呢这个题目，我的思路写出来的代码一个测试都通不过，于是乎我上网搜了搜有没有答案，找到了一个还不错的答案，放在末尾。</h2></li><li><p>先上题目</p></li></ol><ul><li><p><img src="/image/10.png" alt="10"></p></li><li><p>简述一下我的想法</p><ol><li><p>把步骤拆成几步，分别写对应的函数</p><ul><li>先找到子串匹配的首尾位置</li><li>找到原串的尾位置</li><li>计算出新旧交替多出来的字符数x</li><li>让原串中子串匹配的尾位置向后推进x个字符(给新旧交替腾出位置)</li><li>再把新串从子串匹配的首位置开始复制</li><li>最后就形成一个新的改造串</li><li>然后用这个改造串代替原串继续循环改造</li></ul></li><li><p>函数有点多，放在下一篇博客</p></li><li><p><a href="https://cosmos-uestc.space/post/46728.html#T2">我上网搜的答案</a></p></li></ol></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;h2&gt;由于呢这个题目，我的思路写出来的代码一个测试都通不过，于是乎我上网搜了搜有没有答案，找到了一个还不错的答案，放在末尾。&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;先上题目&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;img src=&quot;/image/</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>广义表补充</title>
