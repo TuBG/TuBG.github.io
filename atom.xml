@@ -6,10 +6,41 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-18T12:58:49.583Z</updated>
+  <updated>2022-07-24T07:23:09.951Z</updated>
   <id>http://example.com/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>树的知识点收录</title>
+    <link href="http://example.com/2022/07/24/dddd/"/>
+    <id>http://example.com/2022/07/24/dddd/</id>
+    <published>2022-07-24T07:23:09.950Z</published>
+    <updated>2022-07-24T07:23:09.951Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><h1></h1></li></ol><ul><li><p>度是一个树中的各个结点拥有的子树最多的个数.</p></li><li><p>啊</p></li><li><p>空树是指根结点都没有.</p></li><li><blockquote><p><img src="8.png" alt="a"></p></blockquote></li><li><blockquote><p>由此可见,二叉树的度可以是0,1,2.不一定是2,所以不一样.</p></blockquote></li></ul><ol start="2"><li><h1></h1></li></ol><ul><li><blockquote><p>遍历树的方式(递归代码)</p></blockquote></li><li>先序(根,左,右)<pre class="line-numbers language-C" data-language="C"><code class="language-C">void PreOrder(Bitree root){    if(root!=NULL)    {        Visit(root-&gt;data);//访问根结点        PreOrder(root-&gt;LChild);//先序遍历左子树        PreOrder(root-&gt;RChild);//先序遍历右子树    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li>中序(左,根,右)<pre class="line-numbers language-C" data-language="C"><code class="language-C">void InOrder(Bitree root){    if(root!=NULL)    {        InOrder(root-&gt;LChild);//中序访问左子树        Visit(root-&gt;data);//访问根节点        InOrder(root-&gt;RChild);//中序访问右子树    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li>后序(左,右,根)<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">PostOrder</span><span class="token punctuation">(</span>Bitree root<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">PostOrder</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>LChild<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//后序访问左子树</span>        <span class="token function">PostOrder</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>RChild<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//后序序访问右子树</span>        <span class="token function">Visit</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//访问根节点</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul><ol start="3"><li><h1></h1></li></ol><ul><li><blockquote><p>输出二叉数的结点</p></blockquote></li><li>和第二点差不多,把里面的Visit(root-&gt;data)换成printf(root-&gt;data)就行</li><li>举个例子,先序.</li></ul> <pre class="line-numbers language-C" data-language="C"><code class="language-C">void PreOrder(Bitree root){    if(root!=NULL)    {        printf(root-&gt;data);//输出根结点        PreOrder(root-&gt;LChild);//先序遍历左子树        PreOrder(root-&gt;RChild);//先序遍历右子树    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;h1&gt;&lt;/h1&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;度是一个树中的各个结点拥有的子树最多的个数.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;啊&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;空树是指根结点都没有.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;blockquote&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>串替换答案</title>
