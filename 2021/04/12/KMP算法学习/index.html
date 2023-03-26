@@ -20,17 +20,26 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="KMP算法是模式串匹配一种提高效率的算法   ONE. 为什么这么说呢？   相比于暴力算法（一个一个对比，不匹配子串回归第一个字符，主串回归原本字符的下一个），暴力算法的时间复杂度是O(m*n),空间复杂度是O(1), m和n分别是子串长度和主串长度。而KMP算法的KMP算法的总时间复杂度为O(m+n)，空间复杂度记为O(m)。空间多用了一点，但效率却大大提升，明显是非常有用的。  至于为啥时间">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习 KMP算法">
+<meta property="og:url" content="http://example.com/2021/04/12/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="KMP算法是模式串匹配一种提高效率的算法   ONE. 为什么这么说呢？   相比于暴力算法（一个一个对比，不匹配子串回归第一个字符，主串回归原本字符的下一个），暴力算法的时间复杂度是O(m*n),空间复杂度是O(1), m和n分别是子串长度和主串长度。而KMP算法的KMP算法的总时间复杂度为O(m+n)，空间复杂度记为O(m)。空间多用了一点，但效率却大大提升，明显是非常有用的。  至于为啥时间">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/2.png">
+<meta property="og:image" content="http://example.com/image/3.png">
+<meta property="og:image" content="http://example.com/image/4.png">
+<meta property="article:published_time" content="2021-04-12T09:16:43.000Z">
+<meta property="article:modified_time" content="2023-03-26T13:36:04.649Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/1.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>TuBG&#39;s Studio</title>
+    <title>学习 KMP算法 · TuBG&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -85,6 +94,8 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -209,14 +220,23 @@
 <meta name="generator" content="Hexo 5.4.2"></head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >TuBG&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">学习 KMP算法</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>TuBG's Studio.</a>
 </header>
@@ -235,17 +255,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            TuBG's Studio.
-            <!-- 文章页  -->
+            学习 KMP算法
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -253,12 +273,43 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                it's better to burn out than to fade away
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">868</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/04/12</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <!-- <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li> -->
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -359,432 +410,115 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/18/%E4%B8%B2%E6%9B%BF%E6%8D%A2/" >
-            
-                <span>串替换答案</span>
-        </a>
-        <div class="abstract-content">
-            
-由于呢这个题目，我的思路写出来的代码一个测试都通不过，于是乎我上网搜了搜有没有答案，找到了一个还不错的答案，放在末尾。
-先上题目
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2>KMP算法是模式串匹配一种提高效率的算法</h2>
 
+<blockquote>
+<p>ONE. 为什么这么说呢？</p>
+</blockquote>
+<ol>
+<li><p>相比于暴力算法（一个一个对比，不匹配子串回归第一个字符，主串回归原本字符的下一个），暴力算法的时间复杂度是<br>O(m*n),空间复杂度是O(1), m和n分别是子串长度和主串长度。而KMP算法的KMP算法的总时间复杂度为O(m+n)，空间复杂度记为O(m)。空间多用了一点，但效率却大大提升，明显是非常有用的。</p>
+</li>
+<li><p>至于为啥时间复杂度和空间复杂度是这样，详见下面解析。</p>
+</li>
+</ol>
+<blockquote>
+<p>TWO. 了解KMP算法之前，我们先来一些知识点铺垫</p>
+</blockquote>
+<ol>
+<li><p>前缀，后缀分别是什么?</p>
+<ul>
+<li><p>一串子串的前缀就是包括这个子串第一个字符不包括最后一个字串且连续的一段子串。</p>
+</li>
+<li><p>同理，后缀就是包括这个子串最后一个字符不包括第一个字串且连续的一段子串。</p>
+</li>
+<li><p>举例，对于abbabc这一段串的前缀和后缀是啥？</p>
+<blockquote>
+<p>前缀：a,ab,abb,abba,abbab.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>后缀：c,bc,abc,babc,bbabc.</p>
+</blockquote>
+<ul>
+<li>next数组用于存放子串中每个字符位置前那一段子串的对应的前缀和后缀中相同的缀的最大长度。（next[0]默认为-1）<blockquote>
+<p>next[i]=j,含义是：下标为i 的字符前的字符串最长相等前后缀的长度为j。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>举例</p>
+</blockquote>
+<ul>
+<li>子串t= “abcabcmn”的next数组为next[0]=-1(前面没有字符串单独处理)next[1]=0；next[2]=0；next[3]=0；next[4]=1；next[5]=2；next[6]=3；next[7]=0；</li>
+<li><img src="/image/1.png" alt="图片"></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>THREE. 接下来我们来了解一下KMP的工作原理(用图解的方式)<br>    ps. 这个图解我觉得非常棒,很直观.</p>
+</blockquote>
+<ul>
+<li><p>现在我们先看一个图：第一个长条代表主串，第二个长条代表子串。红色部分代表两串中已匹配的部分，<br>绿色和蓝色部分分别代表主串和子串中不匹配的字符。<br>再具体一些：这个图代表主串”abcabeabcabcmn”和子串”abcabcmn”。</p>
+<ul>
+<li><img src="/image/2.png" alt="例图"><br> 匹配到第六个字符的时候不匹配了,对应的是next[5]=2;</li>
+<li><img src="/image/3.png" alt="例图"><br> 灰色部分就是红色部分字符串的最长相等前后缀，我们子串移动的结果就是让子串的红色部分最长相等前缀和主串红色部分最长相等后缀对齐(即把子串的第一个灰色区域移动到主串的第二个灰色区域下对应)</li>
+<li><img src="/image/4.png" alt="例图"><br> 这就是移动后的结果,配合这个图理解一下,一开始可能不是很好理解.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>FOUR. 最后我们看一下KMP具体的代码,求next数组的代码放在下一篇博客.</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">KMPIndex</span><span class="params">(SqString s,SqString t)</span>  <span class="comment">//KMP算法</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> next[MaxSize],i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	GetNext(t,next);<span class="comment">//求next数组的函数</span></span><br><span class="line">	<span class="keyword">while</span> (i&lt;s.length &amp;&amp; j&lt;t.length) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (j==<span class="number">-1</span> || s.data[i]==t.data[j]) </span><br><span class="line">		&#123;</span><br><span class="line">			i++;j++;  			<span class="comment">//i,j各增1</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> j=next[j]; 		<span class="comment">//i不变,j后退，现在知道为什么这样让子串回退了吧</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (j&gt;=t.length)</span><br><span class="line">		<span class="keyword">return</span>(i-t.length);  	<span class="comment">//返回匹配模式串的首字符下标</span></span><br><span class="line">    <span class="keyword">else</span>  </span><br><span class="line">		<span class="keyword">return</span>(<span class="number">-1</span>);        		<span class="comment">//返回不匹配标志</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>FIVE. 声明,本博客部分图和代码是参考csdn博主的一篇文章,推荐大家可以去看一下,非常详细.<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46007276/article/details/104372119?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161813579516780262584944%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&requ">原文链接</a></p>
+</blockquote>
 
-
-
-
-简述一下我的想法
-
-把步骤拆成几步，分别写对应的函数
-
-先找到子串匹配的首尾位置
-找到原串的尾位置
-计算出新旧交替多出来的字符数x
-让原串中子串匹配的尾位置向后推进x个字符(给新旧交替腾出位置)
-再把新串从子串匹配的首位置开始复制
-最后就形成一个新的改造串
-然后用这个改造串代替原串继续循环改造
-
-
-函数有点多，放在下一篇博客
-
-我上网搜的答案
-
-
-
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/18</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/15/%E5%B9%BF%E4%B9%89%E8%A1%A8%E8%A1%A5%E5%85%85/" >
-            
-                <span>广义表补充</span>
-        </a>
-        <div class="abstract-content">
-            广义表最基本的操作：取表头head(LS)与取表尾tail(LS)
-
-
-head()是取表头元素，即表中第一个元素（可以是表）
-
-
-
-
-tail()是取表尾，即原表去掉第一个元素后剩下形成的表。注意：如果LS=(a,b),则tail(LS)=(b),而不是b；tail返回的一定是个表。
-
-
-例：LS=(a,(b,c,d))
-head(LS)=a
-tail(LS)=((b,c,d))
-head(tail(LS))=(b,c,d)
-tail(tail(LS))=()
-head(head(tail(LS)))=b
-tail(head(tail(LS)))=(c,d)
-head(tail(hea...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/15/%E5%B9%BF%E4%B9%89%E8%A1%A8%E7%9F%A5%E8%AF%86%E7%82%B9/" >
-            
-                <span>广义表知识点</span>
-        </a>
-        <div class="abstract-content">
-            
-
-
-
-广义表是 n 个数据元素（d1，d2，d3，…，dn）的有限序列，广义表中的 di 既可以是单个元素，也可以是一个广义表。
-
- 通常记为 L = （d1，d2，d3，…，dn），L 是广义表的名称，通常广义表的名称用大写字母表示。n 是广义表的长度。
-
-若其中的 di 是一个广义表，则称 di 是广义表 L 的子表。
-
-在广义表 L 中，d1 是广义表 L 的表头，而广义表 L 其余部分组成的表（d2，d3，…，dn）称为广义表表尾。
-
-
-这一点与下面的常用函数有关，先来几个例题。
-
-
-
-
-题目：广义表 L =（a，（b，c））的表头是单个元素 a，表尾是广义表（（b，c）），即...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/13/%E6%A0%91%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E6%94%B6%E5%BD%95/" >
-            
-                <span>树的知识点收录</span>
-        </a>
-        <div class="abstract-content">
-            
-
-
-
-度是一个树中的各个结点拥有的子树最多的个数.
-
- 二叉树指的是度小于等于2的数.
-
-空树是指根结点都没有.
-
-
-
-
-
-
-由此可见,二叉树的度可以是0,1,2.不一定是2,所以不一样.
-
-
-
-
-
-
-
-
-遍历树的方式(递归代码)
-
-
-先序(根,左,右)123456789void PreOrder(Bitree root)&#123;    if(root!=NULL)    &#123;        Visit(root-&gt;data);//访问根结点        PreOrder(root-&gt;LChild);//先序遍历左子树        PreOrder(root...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/12/%E6%B1%82next%E6%95%B0%E7%BB%84%E7%AE%97%E6%B3%95/" >
-            
-                <span>求next数组的算法</span>
-        </a>
-        <div class="abstract-content">
-            这篇学求next数组算法
-
-
-话不多说，直接上代码
-
-12345678910111213141516171819202122void GetNext(SString t,int next[]) &#123;      int j, k;    j=0;         k=-1;        next[0]=-1;    while (j&lt;t.length-1)     //因为next数组的赋值都是在j++之后，所以判断条件是j&lt;t.length-1     &#123;        if (k==-1 || t.data[j]==t.data[k]) &#123;  ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/12/KMP%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" >
-            
-                <span>学习 KMP算法</span>
-        </a>
-        <div class="abstract-content">
-            KMP算法是模式串匹配一种提高效率的算法
-
-
-ONE. 为什么这么说呢？
-
-
-相比于暴力算法（一个一个对比，不匹配子串回归第一个字符，主串回归原本字符的下一个），暴力算法的时间复杂度是O(m*n),空间复杂度是O(1), m和n分别是子串长度和主串长度。而KMP算法的KMP算法的总时间复杂度为O(m+n)，空间复杂度记为O(m)。空间多用了一点，但效率却大大提升，明显是非常有用的。
-
-至于为啥时间复杂度和空间复杂度是这样，详见下面解析。
-
-
-
-TWO. 了解KMP算法之前，我们先来一些知识点铺垫
-
-
-前缀，后缀分别是什么?
-
-一串子串的前缀就是包括这个子串第一个字符不包括最后一个字串且连...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/10/icoding%20problem/" >
-            
-                <span>TuBG&#39;s icoding</span>
-        </a>
-        <div class="abstract-content">
-            分享一波今日icoding的解题思路
-
-
-先来看一波题目
-
-
-
-
-分析思路
-
-
-由于函数的参数是字符串，输入的类型就是字符型。也就是我们需要对字符进行分类判断。
-
-识别到空格
-
-空格符号ascii码值为32
-由于存贮数字的停止循环条件是判断到空格，所以写if的时候我们可以将判断到空格的情况化到其他两种情况中去。
-
-
-
-识别的字符为数字(需要考虑到多位数数字的入栈方式)
-
-0到9对应ascii码值为48~57，所以askii码值-48就是数字大小。
-入栈方式：我们可以定义一个整型变量num来存储多位数，然后用一个循环不断识别字符，每次令num=num*10+x(新识别到的数)，最终识别到空...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/07/First-blog/" >
-            
-                <span>TuBG&#39;s first blog</span>
-        </a>
-        <div class="abstract-content">
-            
-
- 兔八哥
- 
-
-兔八哥简介
-
-
-观看网址
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= https://pic1.zhimg.com/v2-7f63c667057443f9f5c039c7b0dd0fe8_r.jpg?source=1940ef5c >
-    <div class="profile-name">TuBG</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2021/04/12/%E6%B1%82next%E6%95%B0%E7%BB%84%E7%AE%97%E6%B3%95/" title= "求next数组的算法">
+                    <div class="nextTitle">求next数组的算法</div>
+                </a>
             
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/04/10/icoding%20problem/" title= "TuBG's icoding">
+                    <div class="prevTitle">TuBG's icoding</div>
+                </a>
             
-                <a href="//github.com/TuBG" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
     
-        
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.baidu.com target="_black">friendA</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">friendB</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -860,6 +594,24 @@ TWO. 了解KMP算法之前，我们先来一些知识点铺垫
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">KMP算法是模式串匹配一种提高效率的算法</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1077,6 +829,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
