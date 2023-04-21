@@ -367,6 +367,52 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/10/icoding%20problem/" >
+            
+                <span>TuBG&#39;s icoding</span>
+        </a>
+        <div class="abstract-content">
+            分享一波今日icoding的解题思路
+
+
+先来看一波题目
+
+
+
+
+分析思路
+
+
+由于函数的参数是字符串，输入的类型就是字符型。也就是我们需要对字符进行分类判断。
+
+识别到空格
+
+空格符号ascii码值为32
+由于存贮数字的停止循环条件是判断到空格，所以写if的时候我们可以将判断到空格的情况化到其他两种情况中去。
+
+
+
+识别的字符为数字(需要考虑到多位数数字的入栈方式)
+
+0到9对应ascii码值为48~57，所以askii码值-48就是数字大小。
+入栈方式：我们可以定义一个整型变量num来存储多位数，然后用一个循环不断识别字符，每次令num=num*10+x(新识别到的数)，最终识别到空...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/07/First-blog/" >
             
                 <span>TuBG&#39;s first blog</span>
@@ -695,9 +741,22 @@ height:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 11
+        Total : 12
         </div>
         <!-- search  -->
         
@@ -710,6 +769,11 @@ height:50vh;
     
     <div class="archive-year"> 2023 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2023/04/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8403%20%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E3%80%81%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" >数据结构03 哈夫曼树、哈夫曼编码</a>
+        </li>
     
     
         <li class="archive-post-item">

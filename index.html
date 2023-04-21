@@ -367,6 +367,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2023/04/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8403%20%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E3%80%81%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" >
+            
+                <span>数据结构03 哈夫曼树、哈夫曼编码</span>
+        </a>
+        <div class="abstract-content">
+            1. 哈夫曼树（P176）（1）带权路径长度WPL$$公式：WPL=Σwili$$​    解释：其中wi是某个叶子结点的权重，lI是根结点到这个叶子结点的边的数量。
+（2）哈夫曼树定义​    对于拥有相同结点的二叉树，经过不同排列组合，其中WPL最小的就是哈夫曼树，又叫做最优二叉树
+（3）构造哈夫曼树            1. 把全部结点当做孤立的结点。
+            1. 每次选两个最小权值的点作为左右儿子构建一个新的“点”，权值为二者之和。
+            1. 重复2直到只剩下一个点。
+            1. 构建完毕。
+
+2. 哈夫曼编码（1）定义​...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2023/04/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8402%20%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8%E6%B3%95/" >
             
                 <span>数据结构02 十字链表法</span>
@@ -705,52 +735,6 @@ TWO. 了解KMP算法之前，我们先来一些知识点铺垫
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/10/icoding%20problem/" >
-            
-                <span>TuBG&#39;s icoding</span>
-        </a>
-        <div class="abstract-content">
-            分享一波今日icoding的解题思路
-
-
-先来看一波题目
-
-
-
-
-分析思路
-
-
-由于函数的参数是字符串，输入的类型就是字符型。也就是我们需要对字符进行分类判断。
-
-识别到空格
-
-空格符号ascii码值为32
-由于存贮数字的停止循环条件是判断到空格，所以写if的时候我们可以将判断到空格的情况化到其他两种情况中去。
-
-
-
-识别的字符为数字(需要考虑到多位数数字的入栈方式)
-
-0到9对应ascii码值为48~57，所以askii码值-48就是数字大小。
-入栈方式：我们可以定义一个整型变量num来存储多位数，然后用一个循环不断识别字符，每次令num=num*10+x(新识别到的数)，最终识别到空...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
@@ -1052,9 +1036,22 @@ TWO. 了解KMP算法之前，我们先来一些知识点铺垫
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 11
+        Total : 12
         </div>
         <!-- search  -->
         
@@ -1067,6 +1064,11 @@ TWO. 了解KMP算法之前，我们先来一些知识点铺垫
     
     <div class="archive-year"> 2023 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2023/04/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8403%20%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E3%80%81%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" >数据结构03 哈夫曼树、哈夫曼编码</a>
+        </li>
     
     
         <li class="archive-post-item">

@@ -20,27 +20,21 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="十字链表法用来存储有向图的一种方法，邻接表和逆邻接表只能存储有向图的出度或入度，将两者结合到一起，创造除了十字链表法，用来存储有向图。 需要注意的是，网上对于弧头和弧尾的定义不太一样，可能是相反的，本篇文章以A-&gt;B，A为弧尾，B为弧头为例。 顶点结点 结构如下：  a. data是结点数据 b. first是以该顶点为弧头的第一条弧的指针 c. firstout是以该节点为弧尾的第一条弧节">
+    <meta name="description" content="1. 哈夫曼树（P176）（1）带权路径长度WPL$$公式：WPL&#x3D;Σwili$$​    解释：其中wi是某个叶子结点的权重，lI是根结点到这个叶子结点的边的数量。 （2）哈夫曼树定义​    对于拥有相同结点的二叉树，经过不同排列组合，其中WPL最小的就是哈夫曼树，又叫做最优二叉树 （3）构造哈夫曼树            1. 把全部结点当做孤立的结点。             1. 每次选">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构02 十字链表法">
-<meta property="og:url" content="http://example.com/2023/04/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8402%20%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8%E6%B3%95/index.html">
+<meta property="og:title" content="数据结构03 哈夫曼树、哈夫曼编码">
+<meta property="og:url" content="http://example.com/2023/04/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8403%20%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E3%80%81%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="十字链表法用来存储有向图的一种方法，邻接表和逆邻接表只能存储有向图的出度或入度，将两者结合到一起，创造除了十字链表法，用来存储有向图。 需要注意的是，网上对于弧头和弧尾的定义不太一样，可能是相反的，本篇文章以A-&gt;B，A为弧尾，B为弧头为例。 顶点结点 结构如下：  a. data是结点数据 b. first是以该顶点为弧头的第一条弧的指针 c. firstout是以该节点为弧尾的第一条弧节">
+<meta property="og:description" content="1. 哈夫曼树（P176）（1）带权路径长度WPL$$公式：WPL&#x3D;Σwili$$​    解释：其中wi是某个叶子结点的权重，lI是根结点到这个叶子结点的边的数量。 （2）哈夫曼树定义​    对于拥有相同结点的二叉树，经过不同排列组合，其中WPL最小的就是哈夫曼树，又叫做最优二叉树 （3）构造哈夫曼树            1. 把全部结点当做孤立的结点。             1. 每次选">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image/%E9%A1%B6%E7%82%B9%E7%BB%93%E7%82%B9.png">
-<meta property="og:image" content="http://example.com/image/%E9%A1%B6%E7%82%B9%E9%A1%BA%E5%BA%8F%E8%A1%A8.png">
-<meta property="og:image" content="http://example.com/image/%E5%BC%A7%E7%BB%93%E7%82%B9.png">
-<meta property="og:image" content="http://example.com/image/%E7%A4%BA%E4%BE%8B1.png">
-<meta property="og:image" content="http://example.com/image/%E7%A4%BA%E4%BE%8B2.png">
-<meta property="article:published_time" content="2023-04-18T03:01:53.000Z">
-<meta property="article:modified_time" content="2023-04-18T03:03:44.412Z">
+<meta property="article:published_time" content="2023-04-21T08:29:15.000Z">
+<meta property="article:modified_time" content="2023-04-21T09:26:31.164Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/image/%E9%A1%B6%E7%82%B9%E7%BB%93%E7%82%B9.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>数据结构02 十字链表法 · TuBG&#39;s Studio</title>
+    <title>数据结构03 哈夫曼树、哈夫曼编码 · TuBG&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -235,7 +229,7 @@
                 <a href="/" >TuBG&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">数据结构02 十字链表法</a>
+                <a href="#" class="post-name">数据结构03 哈夫曼树、哈夫曼编码</a>
             </div>
     </div>
     
@@ -265,7 +259,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            数据结构02 十字链表法
+            数据结构03 哈夫曼树、哈夫曼编码
             <!-- 404 -->
             
         </h1>
@@ -284,12 +278,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">303</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">438</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2023/04/18</span>
+                    <span class="post-intro-time">2023/04/21</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -413,35 +407,18 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="十字链表法"><a href="#十字链表法" class="headerlink" title="十字链表法"></a>十字链表法</h1><p>用来存储有向图的一种方法，邻接表和逆邻接表只能存储有向图的出度或入度，将两者结合到一起，创造除了十字链表法，用来存储有向图。</p>
-<p>需要注意的是，网上对于弧头和弧尾的定义不太一样，可能是相反的，本篇文章以A-&gt;B，A为弧尾，B为弧头为例。</p>
-<h2 id="顶点结点"><a href="#顶点结点" class="headerlink" title="顶点结点"></a>顶点结点</h2><ol>
-<li><p>结构如下：</p>
-<p><img src="/image/%E9%A1%B6%E7%82%B9%E7%BB%93%E7%82%B9.png"></p>
-<p>a. data是结点数据</p>
-<p>b. first是以该顶点为弧头的第一条弧的指针</p>
-<p>c. firstout是以该节点为弧尾的第一条弧节点的指针</p>
-</li>
-<li><p>图中所有的顶点结点是以顺序表的形式存储的，每个顶点都有对应的下标。</p>
-<p><img src="/image/%E9%A1%B6%E7%82%B9%E9%A1%BA%E5%BA%8F%E8%A1%A8.png"></p>
-</li>
-</ol>
-<h2 id="弧结点"><a href="#弧结点" class="headerlink" title="弧结点"></a>弧结点</h2><ol>
-<li><p>结构如下：</p>
-<p><img src="/image/%E5%BC%A7%E7%BB%93%E7%82%B9.png"></p>
-<p>a. tailvex是弧尾结点在顺序表中的下标</p>
-<p>b. headvex是弧头结点在顺序表中的下标</p>
-<p>c. hlink是弧头相同的下一条弧结点，也就是指向同一个顶点的下一条弧</p>
-<p>d. tlink是弧尾相同的下一条弧结点，也就是从同一个顶点出来的下一条弧</p>
-</li>
-</ol>
-<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><ol>
-<li><p>有向图如下：</p>
-<p><img src="/image/%E7%A4%BA%E4%BE%8B1.png"></p>
-</li>
-<li><p>对应十字链表如下：<br><img src="/image/%E7%A4%BA%E4%BE%8B2.png"></p>
-</li>
-</ol>
+        <h2 id="1-哈夫曼树（P176）"><a href="#1-哈夫曼树（P176）" class="headerlink" title="1. 哈夫曼树（P176）"></a>1. 哈夫曼树（P176）</h2><h3 id="（1）带权路径长度WPL"><a href="#（1）带权路径长度WPL" class="headerlink" title="（1）带权路径长度WPL"></a>（1）带权路径长度WPL</h3><p>$$<br>公式：WPL=Σwili<br>$$<br>​    解释：其中<code>wi</code>是某个叶子结点的权重，<code>lI</code>是根结点到这个叶子结点的边的数量。</p>
+<h3 id="（2）哈夫曼树定义"><a href="#（2）哈夫曼树定义" class="headerlink" title="（2）哈夫曼树定义"></a>（2）哈夫曼树定义</h3><p>​    对于拥有相同结点的二叉树，经过不同排列组合，其中<code>WPL</code>最小的就是哈夫曼树，又叫做最优二叉树</p>
+<h3 id="（3）构造哈夫曼树"><a href="#（3）构造哈夫曼树" class="headerlink" title="（3）构造哈夫曼树"></a>（3）构造哈夫曼树</h3><pre><code>            1. 把全部结点当做孤立的结点。
+            1. 每次选两个最小权值的点作为左右儿子构建一个新的“点”，权值为二者之和。
+            1. 重复2直到只剩下一个点。
+            1. 构建完毕。
+</code></pre>
+<h2 id="2-哈夫曼编码"><a href="#2-哈夫曼编码" class="headerlink" title="2. 哈夫曼编码"></a>2. 哈夫曼编码</h2><h3 id="（1）定义"><a href="#（1）定义" class="headerlink" title="（1）定义"></a>（1）定义</h3><p>​    哈弗曼编码是一种可变长度编码，特点是对于出现频率高的字符编码长度比较短，频率低的字符长度长。每个字符的编码都不能作为另外一个字符编码的前缀。</p>
+<h3 id="（2）构造"><a href="#（2）构造" class="headerlink" title="（2）构造"></a>（2）构造</h3><p>​    每个字符作为叶子结点，出现的频率作为叶子结点的权值，构造哈夫曼树，往左走为0，往右走为1。得到每个字符的编码。</p>
+<h2 id="3-并查集（P178）"><a href="#3-并查集（P178）" class="headerlink" title="3. 并查集（P178）"></a>3. 并查集（P178）</h2><h3 id="（1）构造"><a href="#（1）构造" class="headerlink" title="（1）构造"></a>（1）构造</h3><p>​    用一个数组表示：<code>UFSets[size]</code>,其中<code>size</code>是并查集中全部结点个数，每个元素值为双亲结点在数组中的下标，初始化的时候值都为-1表示各自为双亲结点。</p>
+<h3 id="（2）find函数"><a href="#（2）find函数" class="headerlink" title="（2）find函数"></a>（2）find函数</h3><p>​    寻找某个节点所在集合树的根，一直顺着该结点往上找双亲结点，直到找到根节点为止。</p>
+<h3 id="（3）-union函数"><a href="#（3）-union函数" class="headerlink" title="（3） union函数"></a>（3） union函数</h3><p>​    将两个集合合并，将一个集合的根节点的双亲结点设置为另外一个集合的根节点。</p>
 
     </article>
     <!-- license  -->
@@ -450,17 +427,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2023/04/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8403%20%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E3%80%81%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title= "数据结构03 哈夫曼树、哈夫曼编码">
-                    <div class="nextTitle">数据结构03 哈夫曼树、哈夫曼编码</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2023/04/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8401%20%E7%BA%BF%E6%80%A7%E8%A1%A8/" title= "数据结构-线性表">
-                    <div class="prevTitle">数据结构-线性表</div>
+                <a href= "/2023/04/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8402%20%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8%E6%B3%95/" title= "数据结构02 十字链表法">
+                    <div class="prevTitle">数据结构02 十字链表法</div>
                 </a>
             
         </li>
@@ -576,7 +548,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">十字链表法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B6%E7%82%B9%E7%BB%93%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">顶点结点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%A7%E7%BB%93%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">弧结点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.3.</span> <span class="toc-text">举例</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%EF%BC%88P176%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">1. 哈夫曼树（P176）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%B8%A6%E6%9D%83%E8%B7%AF%E5%BE%84%E9%95%BF%E5%BA%A6WPL"><span class="toc-number">1.1.</span> <span class="toc-text">（1）带权路径长度WPL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.</span> <span class="toc-text">（2）哈夫曼树定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%9E%84%E9%80%A0%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="toc-number">1.3.</span> <span class="toc-text">（3）构造哈夫曼树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">2. 哈夫曼编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%AE%9A%E4%B9%89"><span class="toc-number">2.1.</span> <span class="toc-text">（1）定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%9E%84%E9%80%A0"><span class="toc-number">2.2.</span> <span class="toc-text">（2）构造</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%B9%B6%E6%9F%A5%E9%9B%86%EF%BC%88P178%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">3. 并查集（P178）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E6%9E%84%E9%80%A0"><span class="toc-number">3.1.</span> <span class="toc-text">（1）构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89find%E5%87%BD%E6%95%B0"><span class="toc-number">3.2.</span> <span class="toc-text">（2）find函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89-union%E5%87%BD%E6%95%B0"><span class="toc-number">3.3.</span> <span class="toc-text">（3） union函数</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
